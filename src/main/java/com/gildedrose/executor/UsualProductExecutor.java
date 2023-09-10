@@ -11,14 +11,21 @@ public class UsualProductExecutor implements Executor {
 
     @Override
     public void execute() {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
-        item.sellIn = item.sellIn - 1;
+        decreaseQuality();
+        decreaseSellIn();
+
         if (item.sellIn < 0) {
-            if (item.quality > 0) {
-                item.quality = item.quality - 1;
-            }
+            decreaseQuality();
         }
+    }
+
+    private void decreaseQuality() {
+        if (item.quality > 0) {
+            item.quality--;
+        }
+    }
+
+    private void decreaseSellIn() {
+        item.sellIn--;
     }
 }

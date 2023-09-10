@@ -11,14 +11,20 @@ public class AgedExecutor implements Executor {
 
     @Override
     public void execute() {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
-        item.sellIn = item.sellIn - 1;
+        increaseQuality();
+        decreaseSellIn();
         if (item.sellIn < 0) {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-            }
+            increaseQuality();
         }
+    }
+
+    private void increaseQuality() {
+        if (item.quality < MAX_ITEM_QUALITY) {
+            item.quality++;
+        }
+    }
+
+    private void decreaseSellIn() {
+        item.sellIn--;
     }
 }

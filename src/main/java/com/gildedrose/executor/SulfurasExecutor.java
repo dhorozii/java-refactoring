@@ -10,5 +10,7 @@ public class SulfurasExecutor implements Executor {
     }
 
     @Override
-    public void execute() {}
+    public void execute() {
+        // Sulfuras items do not change in quality or sellIn, so this method remains empty.
+    }
 }

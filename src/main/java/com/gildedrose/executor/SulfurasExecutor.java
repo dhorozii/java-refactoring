@@ -10,6 +10,5 @@ public class SulfurasExecutor implements Executor {
     }
 
     @Override
-    public void execute() {
-    }
+    public void execute() {}
 }

@@ -10,6 +10,15 @@ class GildedRoseTest {
     private final static int DAYS_IN_WEEK = 7;
 
     @Test
+    public void updateQuality_empty_item_array() {
+        try {
+            new GildedRose(null);
+        } catch (IllegalArgumentException e) {
+            assertEquals("Items array should not be null or empty", e.getMessage());
+        }
+    }
+
+    @Test
     public void updateQuality_quality_and_sellIn_decrease() {
         // Given 'standard' products
         Item[] items = new Item[]{

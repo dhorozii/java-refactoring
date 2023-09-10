@@ -127,8 +127,8 @@ class GildedRoseTest {
         }
 
         // Then
-        assertEquals(2, items[0].quality);
-        assertEquals(-2, items[0].sellIn);
+        assertEquals(14, items[0].quality);
+        assertEquals(-8, items[0].sellIn);
     }
 
     @Test

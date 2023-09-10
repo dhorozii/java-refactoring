@@ -5,6 +5,7 @@ import com.gildedrose.executor.BackstagePassExecutor;
 import com.gildedrose.executor.Executor;
 import com.gildedrose.executor.SulfurasExecutor;
 import com.gildedrose.executor.UsualProductExecutor;
+import com.gildedrose.executor.ConjuredExecutor;
 import com.gildedrose.util.ItemTypeAnalyzer;
 
 public class ItemProcessor {
@@ -25,6 +26,8 @@ public class ItemProcessor {
                 return new SulfurasExecutor(item);
             case BACKSTAGE_PASS:
                 return new BackstagePassExecutor(item);
+            case CONJURED:
+                return new ConjuredExecutor(item);
             case USUAL:
             default:
                 return new UsualProductExecutor(item);

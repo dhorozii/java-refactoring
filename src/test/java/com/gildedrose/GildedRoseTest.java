@@ -281,4 +281,26 @@ class GildedRoseTest {
         assertEquals(-1, items[0].sellIn);
     }
 
+    @Test
+    @DisplayName("'Conjured' items degrade in Quality twice as fast as normal items")
+    public void updateQuality_quality_and_sellIn_decrease_conjured() {
+        // Given 'standard' products
+        Item[] items = new Item[]{
+                new Item("conjured Dexterity Vest", 10, 20),
+                new Item("Conjured of the Mongoose", 0, 7)
+        };
+        GildedRose app = new GildedRose(items);
+
+        // When the day is gone
+        app.updateQuality();
+
+        // Then
+        //20 - 2 (twice than usual) = 18
+        assertEquals(9, items[0].sellIn);
+        assertEquals(18, items[0].quality);
+
+        //7 - 2 (twice than usual) - 2 (additional expired sell in condition) = 3
+        assertEquals(-1, items[1].sellIn);
+        assertEquals(3, items[1].quality);
+    }
 }

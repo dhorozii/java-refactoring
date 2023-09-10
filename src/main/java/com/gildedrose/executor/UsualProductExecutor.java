@@ -3,29 +3,24 @@ package com.gildedrose.executor;
 import com.gildedrose.Item;
 
 public class UsualProductExecutor implements Executor {
-    private final Item item;
-
-    public UsualProductExecutor(Item item) {
-        this.item = item;
-    }
 
     @Override
-    public void execute() {
-        decreaseQuality();
-        decreaseSellIn();
+    public void execute(Item item) {
+        decreaseQuality(item);
+        decreaseSellIn(item);
 
         if (item.sellIn < 0) {
-            decreaseQuality();
+            decreaseQuality(item);
         }
     }
 
-    private void decreaseQuality() {
+    private void decreaseQuality(Item item) {
         if (item.quality > 0) {
             item.quality--;
         }
     }
 
-    private void decreaseSellIn() {
+    private void decreaseSellIn(Item item) {
         item.sellIn--;
     }
 }

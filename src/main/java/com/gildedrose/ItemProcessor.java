@@ -1,11 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.executor.AgedExecutor;
-import com.gildedrose.executor.BackstagePassExecutor;
 import com.gildedrose.executor.Executor;
-import com.gildedrose.executor.SulfurasExecutor;
-import com.gildedrose.executor.UsualProductExecutor;
-import com.gildedrose.executor.ConjuredExecutor;
 import com.gildedrose.util.ItemTypeAnalyzer;
 
 public class ItemProcessor {
@@ -15,26 +10,10 @@ public class ItemProcessor {
 
     public ItemProcessor(Item item) {
         this.item = item;
-        this.executor = setUpProcessor(ItemTypeAnalyzer.analyze(item.name));
+        this.executor = ItemTypeAnalyzer.analyze(item.name).getExecutor();
     }
 
-    private Executor setUpProcessor(ItemType itemType) {
-        switch (itemType) {
-            case AGED:
-                return new AgedExecutor(item);
-            case SULFURAS:
-                return new SulfurasExecutor(item);
-            case BACKSTAGE_PASS:
-                return new BackstagePassExecutor(item);
-            case CONJURED:
-                return new ConjuredExecutor(item);
-            case USUAL:
-            default:
-                return new UsualProductExecutor(item);
-        }
-    }
-
-    public Executor getProcessor() {
-        return executor;
+    public void execute() {
+        executor.execute(item);
     }
 }

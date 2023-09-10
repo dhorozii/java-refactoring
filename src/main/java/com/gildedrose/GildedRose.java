@@ -16,6 +16,6 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        itemProcessor.forEach(el -> el.getProcessor().execute());
+        itemProcessor.forEach(ItemProcessor::execute);
     }
 }

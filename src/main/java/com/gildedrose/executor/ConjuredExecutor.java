@@ -11,5 +11,21 @@ public class ConjuredExecutor implements Executor {
 
     @Override
     public void execute() {
+        decreaseQuality();
+        decreaseSellIn();
+
+        if (item.sellIn < 0) {
+            decreaseQuality();
+        }
+    }
+
+    private void decreaseQuality() {
+        if (item.quality > 0) {
+            item.quality -= 2;
+        }
+    }
+
+    private void decreaseSellIn() {
+        item.sellIn--;
     }
 }

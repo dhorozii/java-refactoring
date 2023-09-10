@@ -295,10 +295,12 @@ class GildedRoseTest {
         app.updateQuality();
 
         // Then
+        //20 - 2 (twice than usual) = 18
         assertEquals(9, items[0].sellIn);
         assertEquals(18, items[0].quality);
 
+        //7 - 2 (twice than usual) - 2 (additional expired sell in condition) = 3
         assertEquals(-1, items[1].sellIn);
-        assertEquals(2, items[1].quality);
+        assertEquals(3, items[1].quality);
     }
 }

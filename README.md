@@ -1,6 +1,5 @@
 ======================================
 Gilded Rose Description
-======================================
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
 prominent city ran by a friendly innkeeper named Allison. We also buy and sell only the finest goods.
@@ -24,7 +23,6 @@ we can begin selling a new category of items. First an introduction to our syste
 
 ======================================
 To start the program executing, please run one of the next query
-======================================
 
 ## Run the Text Fixture from Command-Line
 

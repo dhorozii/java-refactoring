@@ -1,4 +1,3 @@
-======================================
 Gilded Rose Description
 
 Hi and welcome to team Gilded Rose. As you know, we are a small inn with a prime location in a
@@ -21,7 +20,6 @@ we can begin selling a new category of items. First an introduction to our syste
 	Quality drops to 0 after the concert
 	- "Conjured" items degrade in Quality twice as fast as normal items
 
-======================================
 To start the program executing, please run one of the next query
 
 ## Run the Text Fixture from Command-Line
